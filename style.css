@@ -1,0 +1,206 @@
+
+* {
+    padding: 0;
+    margin-top: 0px;
+    box-sizing: border-box;
+}
+
+.bodySection {
+    background-image: url('https://www.icegif.com/wp-content/uploads/2024/01/icegif-1064.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    transition: background-image 1s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 90%;
+    max-width: 1100px;
+    background-image: url('https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    opacity: 0.7;
+    /* margin-top: 100px; */
+}
+
+.input-container {
+    position: relative;
+    width: 300px;
+}
+
+.location-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: rgb(157, 154, 154);
+    margin-top: 12px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 4px 4px 4px 40px;
+    border-radius: 15px;
+    background-color: rgb(14, 14, 15);
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 5px rgb(87, 144, 161);
+    border: 1px solid rgb(44, 51, 52);
+}
+
+#get-weather {
+    padding: 4px 15px;
+    border-radius: 15px;
+    background-color: rgb(26, 26, 27);
+    font-size: 13px;
+    color: white;
+    height: 35px;
+    transition: background-color 0.3s ease;
+}
+
+#get-weather:hover {
+    background-color: #1c87c9;
+}
+
+.temp {
+    font-size: 85px;
+    font-weight: 700;
+    animation: tempChange 0.5s ease-in-out;
+}
+
+@keyframes tempChange {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.rain-icon {
+    font-size: 40px;
+    margin-left: 10px;
+    animation: iconAnimation 1.5s infinite;
+}
+
+@keyframes iconAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.place {
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.climate {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.humid {
+    font-weight: 500;
+    
+}
+
+.description {
+    width: 90%;
+    background-image: linear-gradient(to bottom, rgba(90, 89, 89, 0.821), rgba(10, 10, 10, 0.481));
+    border-radius: 10px;
+    animation: fadeIn 2s;
+}
+
+.press {
+    width: 40%;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, rgba(59, 49, 49, 0.821), rgba(10, 10, 10, 0.481));
+    border-radius: 10px;
+}
+
+.humidity {
+    width: 40%;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, rgba(54, 52, 52, 0.821), rgba(10, 10, 10, 0.481));
+    color: rgb(100, 97, 97);
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.temperature {
+    font-size: 18px;
+    color: rgb(100, 97, 97);
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.feelsLike {
+    color: rgb(153, 151, 151);
+    font-size: 12px;
+}
+
+.humiCon {
+    font-size: 18px;
+    color: rgb(85, 83, 83);
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.reportIssue {
+    width: 90%;
+    background-image: linear-gradient(to bottom, rgba(90, 89, 89, 0.821), rgba(10, 10, 10, 0.481));
+    border-radius: 10px;
+}
+
+.issue {
+    font-size: 15px;
+}
+
+.reportPara {
+    font-size: 15px;
+}
+
+.tips {
+    font-size: 15px;
+    animation: fadeIn 2s;
+}
+
+@media(max-width: 768px) {
+    .main{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 30px;
+    }
+    input[type="text"]{
+        width: 70%;
+    }
+    
+  } 
+
+  @media (max-width: 480px) {
+    .main {
+        width: 100%;
+        padding: 30px;
+    }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+      <!-- favicon -->
+      <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3845/3845731.png" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Fontawesom cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body >
+    <div
+      class="bodySection d-flex justify-content-center align-items-center"
+      id="bodySection"
+    >
+      <div class="main shadow " id="result">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5 mt-5 mb-3 text-light fw-1"><b>weather.com</b></div>
+            <div class="col-md-5">
+              <div class="input-container mt-4 d-flex">
+                <i
+                  class="fa-solid fa-location-dot location-icon "
+                  style="color: #ffffff"
+                ></i>
+                <input
+                  id="place"
+                  type="text"
+                  placeholder="Enter location"
+                  class="shadow text-light mt-4 inputBox"
+                />
+                <button
+                  type="button"
+                  id="get-weather"
+                  class="btn ms-2 mt-4 shadow"
+                  onclick="search()"
+                >
+                  Check
+                </button>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+              <div class="weather">
+                <div class="d-flex">
+                  <h1 class="text-light temp mt-3">25°</h1>
+                  <i
+                    class="fa-solid fa-cloud-showers-heavy rain-icon mt-5"
+                    style="color: #ffffff"
+                  ></i>
+                </div>
+                <h3 class="text-light place">Kochi</h3>
+                <h4 class="climate text-light mt-3">Rain</h4>
+                <h6 class="text-light humid mt-4">H:32°  L:18°</h6>
+                <!-- <h6 class="text-light humid mt-4">Date</h6> -->
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="thunder d-flex">
+                <div class="press mt-3 ps-3 me-5">
+                  <div class="temp d-flex">
+                    <i
+                      class="fa-solid fa-temperature-three-quarters temperature"
+                    ></i>
+                    <h6 class="pt-2 feelsLike">FEELS LIKE</h6>
+                  </div>
+                  <h3 class="text-light">28°</h3>
+                  <p class="text-light pb-2">
+                    Humidity is making <br />
+                    it feel warmer
+                  </p>
+                </div>
+                <div class="humidity mt-3 ps-3">
+                  <div class="temp d-flex">
+                    <i class="fa-solid fa-droplet humiCon"></i>
+                    <h6 class="pt-2 feelsLike">HUMIDITY</h6>
+                  </div>
+                  <h3 class="text-light">95%</h3>
+                  <p class="text-light pb-2">
+                    The dew point is 24° <br />
+                    right now
+                  </p>
+                </div>
+              </div>
+  
+              <div class="thunder d-flex">
+                <div class="press mt-3 ps-3 me-5">
+                  <div class="temp d-flex">
+                    <i class="fa-solid fa-wind temperature"></i>
+                    <h6 class="pt-2 feelsLike">WIND</h6>
+                  </div>
+                  <h6 class="text-light"><span class="fs-3">8</span> KPH</h6>
+                </div>
+                <div class="humidity mt-3 ps-3">
+                  <div class="temp d-flex">
+                    <i class="fa-brands fa-wpressr temperature"></i>
+                    <h6 class="pt-2 feelsLike">PRESSURE</h6>
+                  </div>
+                  <h6 class="text-light  mb-3">
+                    <span class="fs-3">1008</span> hPa
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+  
+          <div class="row mt-2">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+              <div
+                class="description mt-3"
+                style="box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1)"
+              >
+                <div class="desc">
+                  <p class="text-light ms-4 pt-3">
+                    Description: "overcast clouds"
+                  </p>
+                  <p class="text-light pb-4 ps-3">
+                    💡 Health Tip: Don't forget your umbrella! ☔
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div
+                class="reportIssue mt-3"
+                style="box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1)"
+              >
+                <div class="desc">
+                  <div class="text-light ms-3 pt-3 d-flex">
+                    <i class="fa-solid fa-message mt-1"></i>
+                    <h5 class="ms-2 issue">Report an Issue</h5>
+                  </div>
+                  <p class="text-light pb-4 reportPara ps-3 pe-3">
+                    You can describe the current conditions at your location to
+                    help improve forcasts.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
